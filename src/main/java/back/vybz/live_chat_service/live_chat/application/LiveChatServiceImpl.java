@@ -20,7 +20,7 @@ public class LiveChatServiceImpl implements LiveChatService {
     @Override
     public void sendLiveChat(RequestSendLiveChatDto requestSendLiveChatDto) {
         liveChatKafkaProducer.sendChatMessage(RequestSendLiveChatDto.toLiveChatEvent(
-                requestSendLiveChatDto.getLiveId(), requestSendLiveChatDto.getSenderUuid(), requestSendLiveChatDto.getContent()));
-        log.info("라이브 채팅 전송 완료: {}, {}, {}", requestSendLiveChatDto.getLiveId(), requestSendLiveChatDto.getSenderUuid(), requestSendLiveChatDto.getContent());
+                requestSendLiveChatDto.getLiveId(), requestSendLiveChatDto.getSenderUuid(), requestSendLiveChatDto.getNickname(), requestSendLiveChatDto.getContent()));
+        log.info("라이브 채팅 전송 완료: {}, {}, {}, {}", requestSendLiveChatDto.getLiveId(), requestSendLiveChatDto.getSenderUuid(), requestSendLiveChatDto.getNickname(), requestSendLiveChatDto.getContent());
     }
 }

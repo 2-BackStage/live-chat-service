@@ -7,6 +7,7 @@ public class ResponseLiveChatVo {
 
     private String liveId;
     private String userUuid;
+    private String nickname;
     private String content;
 
 }

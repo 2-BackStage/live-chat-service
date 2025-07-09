@@ -23,6 +23,7 @@ public class LiveChatDocController {
                ```json
                {
                  "senderUuid": "user-uuid",
+                 "nickname": "사용자 닉네임",
                  "content": "안녕하세요!",
                  liveId: liveId
                }

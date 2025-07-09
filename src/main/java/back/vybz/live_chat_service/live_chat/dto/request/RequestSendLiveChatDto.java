@@ -12,12 +12,14 @@ public class RequestSendLiveChatDto {
 
     private String liveId;
     private String senderUuid;
+    private String nickname;
     private String content;
 
     @Builder
-    public RequestSendLiveChatDto(String liveId, String senderUuid, String content) {
+    public RequestSendLiveChatDto(String liveId, String senderUuid, String nickname, String content) {
         this.liveId = liveId;
         this.senderUuid = senderUuid;
+        this.nickname = nickname;
         this.content = content;
     }
 
@@ -25,14 +27,16 @@ public class RequestSendLiveChatDto {
         return RequestSendLiveChatDto.builder()
                 .liveId(liveId)
                 .senderUuid(requestSendLiveChatVo.getSenderUuid())
+                .nickname(requestSendLiveChatVo.getNickname())
                 .content(requestSendLiveChatVo.getContent())
                 .build();
     }
 
-    public static LiveChatEvent toLiveChatEvent(String liveId, String senderUuid, String content) {
+    public static LiveChatEvent toLiveChatEvent(String liveId, String senderUuid, String nickname, String content) {
         return LiveChatEvent.builder()
                 .liveId(liveId)
                 .senderUuid(senderUuid)
+                .nickname(nickname)
                 .content(content)
                 .build();
     }
